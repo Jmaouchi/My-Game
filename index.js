@@ -54,7 +54,6 @@ function startGame(){
 
 function closeIt(){
   // assign to the first page
-
   window. close()
 }
 
