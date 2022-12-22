@@ -32,7 +32,7 @@ function trackMyScore(){
   let blockleft =  parseInt(window.getComputedStyle(block).getPropertyValue('left'));
 
   // lets see where the moto div touch the rock
-  if(blockleft<20 && blockleft>0 && characterTop>=130){ // the 20 and 0 coming from the motocycle div, because it has a width of 20px
+  if(blockleft<50 && blockleft>0 && characterTop>=130){ // the 50 and 0 coming from the motocycle div, cause it has a width of 50px
     running.textContent = 'lost'
     running.classList.add('lost')
     // if the classlist exist, then dont add it again 
