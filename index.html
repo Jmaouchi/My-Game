@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="context">
+    <div class="context-content">
+      <div class="div-col">
+        <div class="formBx">
+          <h1 class="heading">Score:</h1>
+          <p class="time"></p>
+        </div>
+      </div>
+    </div>
+    <span class="running"><img src="/teadora-kankaanpaa-runcycle.gif" style="width: 150px;"></span>
+  </div>
+
+  <section>
+    <div id="game">
+      <div class="game-content">
+        <div id="character">
+          <img  src="./images/Screenshot 2022-06-09 003650.png" alt="" class="moto">
+        </div>
+        <!-- blcok div -->
+        <div id="block">
+        </div>
+      </div>
+      <!-- character div -->
+    </div>
+  </section>
+  <div class="section-two">
+    <button  class="btn-jump">Jump</button>
+  </div>
+
+  <!-- this will be the modal that will be showing after the user lose the game  -->
+  <div class="modal-overlay">
+    <div class="modal-container">
+      <h5>Game Over</h5>
+      <p class="overlay-p-tag">Score is <span class="score"></span></p>
+      <div class="play-again">
+        <button class="play">play again</button>
+        <button class="close-btn btn closeAll" id="close-btn">Close Window<i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script> 
+  <script src="./index.js"></script>
+</body>
+</html>

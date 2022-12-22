@@ -1,0 +1,306 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family:'Courier New', Courier, monospace;
+}
+
+body{
+  position: relative;
+  background-color: black;
+}
+
+section{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+section::after{
+  display: none;
+  content: "";
+  position: absolute;
+  background-color: #2e3030;
+  inset:7px; /* this is what is going to do the job by creating a little gap between the after and the befor */
+  border-radius: 15px;
+}
+
+
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 166, 233, 0.5);
+  place-items: center;
+  transition: var(--transition);
+  z-index: 1;
+  display: none;
+}
+
+.modal-overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  position: relative;
+  background-color: rgb(11, 31, 134);
+  color: black;
+  border-radius: 15px;
+  padding: 150px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgb(12, 12, 12);
+}
+
+
+#game{
+  border-radius: 20px;
+  background: url(./images/road.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 200px;
+  width: 900px;
+  height: 300px;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.game-content{
+  margin-top: 60px;
+}
+
+#character{
+  width: 10px;
+  height: 50px;
+  background: url(./images/8840ebae078a3d61464ba96d2bd5c063.png);
+  margin-left: 10px;
+  position: relative;
+  top: 150px; 
+}
+
+/* #character{
+  transform: rotate(180deg);
+} */
+
+#block{
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 15px;
+  position: relative;
+  top: 130px;
+  left: 580px;
+  animation:  block 3s infinite linear;
+}
+
+.context{
+  display: flex;
+  background-color: rgb(24, 25, 25);
+  padding: 25px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.context .context-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0px 15px 25px rgb(18, 12, 12);
+  border-radius: 10px;
+}
+
+
+.div-col{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.div-col::before{
+content: "";
+position: absolute;
+width: 400px; /* this is the width of the box */
+background-image: -webkit-gradient(linear, left top, left bottom, from (rgb(6, 12, 183), to (rgb(221, 8, 44))));
+background-image: linear-gradient(180deg, rgb(8, 0, 255), rgb(241, 8, 47));
+height: 20%; /* this will make sure that the box it hitting the top of the borders */
+-webkit-animation: rotBGimg 3s linear infinite;
+animation: rotBGimg 3s linear infinite;
+-webkit-transition: all 0.2s linear;
+transition: all 0.2s  linear;
+}
+
+.div-col:after {
+  content: "";
+  position: absolute;
+  background-color: #2e3030;
+  inset:3px; /* this is what is going to do the job by creating a little gap between the after and the befor, that will let us
+  show the colors. the after will be showing after the div and the befor is befor the div 
+  but make sure that everything inide this div should have a z-index of 1 (if not, it wont be showing) also the div should display as flex*/
+  border-radius: 15px;
+  }
+
+@-webkit-keyframes rotBGimg {
+from{
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+to {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+}
+
+.formBx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  opacity: 1;
+  padding: 10px 25px 10px 25px;
+  width: 40%;
+  z-index: 1;
+}
+
+
+.time{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 25px;
+}
+
+.context span.running{
+  background-color: rgb(93, 93, 94);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 40px;
+}
+
+/* create animations */
+
+ /* this will make the blue div to move from the right to the left */
+@keyframes block{
+  0%{left: 480px;}
+  100%{left: -40px;}
+}
+
+/* this will make the red div to jump */
+@keyframes jump{
+  0%{top: 150px;} 
+  30%{top: 100px;}
+  70%{top: 100px;}
+  100%{top: 150px;}
+}
+
+@keyframes died{
+  0%{top: 0px;} 
+  100%{bottom: -150px;}
+}
+
+.animate{
+  animation: jump 500ms;
+  transform: rotate(-40deg);
+}
+
+.animate-died{
+  animation: died 10s infinite;
+  transform: rotate(180deg);
+}
+
+.moto{
+  max-width: 60px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: 10px;
+}
+
+.section-two{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+button{
+  padding:15px;
+  margin: 10px;
+}
+
+.btn-jump{
+  background-color: rgb(120, 123, 123);
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.btn-jump:hover{
+  background-color: aliceblue;
+  color: black;
+}
+
+.btn-slide{
+  background-color: aqua;
+  color: black;
+  font-size: 20px;
+}
+
+h5{
+  color: rgb(207, 197, 197);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.overlay-p-tag{
+  font-size: 22px;
+  font-weight: 300;
+  color: rgb(207, 197, 197);
+}
+
+.play-again{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-size:18px;
+  font-weight: bold;
+}
+
+.play-again .play{
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-size:18px;
+  font-weight: bold;
+}
+
+.play-again .close-btn{
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size:18px;
+  font-weight: bold;
+}
+
+.play-again .close-btn i{
+  color: rgb(233, 8, 8);
+}

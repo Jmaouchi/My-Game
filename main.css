@@ -1,0 +1,41 @@
+.main{
+  background-color: black;
+}
+
+.main-content{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.welcome{
+  /* position: absolute; */
+  transform: rotate(360deg);
+  transition: all 5s;
+  font-size: 55px;
+}
+
+.main-content-context{
+  
+}
+
+.main-play{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button{
+  background-color: aqua;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  border: 1px dashed rgb(119, 118, 118);
+}
