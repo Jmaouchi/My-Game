@@ -59,3 +59,13 @@ button:hover{
   border: 1px dashed rgb(119, 118, 118);
 }
 
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  background-color: black;
+  color: white;
+}
