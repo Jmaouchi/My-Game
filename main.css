@@ -1,9 +1,12 @@
 .main{
   background-image: url(./images/cover.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 100px;
 }
 
 .first_content{
@@ -16,7 +19,7 @@
 }
 
 .second_content{
-  background-color: rgb(173, 173, 173);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,29 +27,29 @@
   min-height: 50vh;
   width: 80vh;
   border-radius: 15px;
+  color:gainsboro;
+}
+
+.second_contect_paragraph{
+  padding: 10px;
 }
 
 .welcome{
-  /* position: absolute; */
   transform: rotate(360deg);
   transition: all 5s;
-  font-size: 55px;
-  color: aliceblue;
+  font-size: 65px;
+  color: rgb(2, 36, 48);
+  background-color: beige;
+  border-radius: 15px;
+  padding:5px;
+  font-family:fantasy;
 }
 
-.main-content-context{
-  
-}
-
-.main-play{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
 button{
-  background-color: aqua;
+  background-color: rgb(29, 197, 248);
   padding: 10px;
+  font-size: 25px;
   cursor: pointer;
 }
 
@@ -55,3 +58,4 @@ button:hover{
   color: white;
   border: 1px dashed rgb(119, 118, 118);
 }
+
