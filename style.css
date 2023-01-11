@@ -5,8 +5,8 @@
 }
 
 body{
-  position: relative;
-  background-color: black;
+  
+  background-image: url(./sky.jpg);
 }
 
 section{
@@ -36,7 +36,7 @@ section::after{
   background: rgba(3, 104, 175, 0.5);
   place-items: center;
   transition: var(--transition);
-  z-index: 1;
+  z-index: 99999;
   display: none;
 }
 
@@ -58,11 +58,6 @@ section::after{
 
 
 #game{
-  border-radius: 20px;
-  background: url(./images/road.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   margin-top: 200px;
   width: 900px;
   height: 300px;
@@ -77,12 +72,11 @@ section::after{
 #character{
   width: 50px;
   height: 50px;
-  background-color: red;
   margin-left: 10px;
   position: relative;
   top: 150px; 
+  z-index: 9999;
 }
-
 
 #block{
   width: 20px;
@@ -92,8 +86,10 @@ section::after{
   position: relative;
   top: 130px;
   left: 580px;
-  animation:  block 3s infinite linear;
+  z-index: 9999;
+  animation:  block 1s infinite linear;
 }
+
 
 .context{
   display: flex;
@@ -102,6 +98,7 @@ section::after{
   align-items: center;
   justify-content: space-around;
 }
+
 
 .context .context-content{
   display: flex;
@@ -192,8 +189,8 @@ to {
 
  /* this will make the blue div to move from the right to the left */
 @keyframes block{
-  0%{left: 480px;}
-  100%{left: -40px;}
+  0%{left: 1080px;}
+  100%{left: -740px;}
 }
 
 /* this will make the red div to jump */
@@ -219,18 +216,17 @@ to {
   transform: rotate(180deg);
 }
 
-.moto{
-  max-width: 60px;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-  margin-top: 10px;
+.motor{
+  max-width: 150px;
 }
 
 .section-two{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 7px;
+  min-height: 30vh;
+  background-color: black;
 }
 
 button{
@@ -300,4 +296,52 @@ h5{
 
 .play-again .close-btn i{
   color: rgb(233, 8, 8);
+}
+
+
+.highway{
+  height: 100px;
+  width: 500%;
+  display: block;
+  background-image: url(./images/road.jpg);
+  background-repeat: repeat-y;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  animation: highway 2s linear infinite;
+}
+
+
+@keyframes highway 
+{
+    100%{
+      transform: translateX(-1400px);
+    }
+}
+
+/* city */
+
+.city{
+  height: 250px;
+  width: 500%;
+  background-image: url(./images/city.png);
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 999;
+  /* this will repeat the image on the x axis  */
+  background-repeat: repeat-x;
+  animation: city 20s linear infinite;
+}
+
+
+@keyframes city
+{
+    100%{
+      transform: translateX(-1400px);
+    }
 }
